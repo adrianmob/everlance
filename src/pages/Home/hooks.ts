@@ -46,8 +46,6 @@ const useHome = () => {
     (data) => getUsers(data),
     {
       getNextPageParam: (lastPage, pages) => {
-        console.log(lastPage);
-        console.log(pages);
         if (lastPage.length === 0) return;
         return pages.length + 1;
       },

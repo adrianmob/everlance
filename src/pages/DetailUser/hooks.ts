@@ -2,22 +2,9 @@ import { githubApi } from "../../api/githubApi";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { UserInfo } from "../../interfaces";
 
 const useDetail = () => {
-  interface UserInfo {
-    avatar_url: string;
-    name: string;
-    login: string;
-    bio: string;
-    location: string;
-    email: string;
-    html_url: string;
-    public_repos: number;
-    followers: number;
-    following: number;
-    twitter_username: string;
-    blog: string;
-  }
   const { idUser } = useParams();
   const [userInfo, setuserInfo] = useState<UserInfo>({
     avatar_url: "",
